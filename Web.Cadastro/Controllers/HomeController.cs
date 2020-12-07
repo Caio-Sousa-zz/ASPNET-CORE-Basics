@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Diagnostics;
 using Web.Cadastro.Models;
+using System.Linq;
 
 namespace Web.Cadastro.Controllers
 {
@@ -17,7 +18,7 @@ namespace Web.Cadastro.Controllers
             _logger = logger;
         }
 
-        [Route("")]
+       
         [Route("pagina-inicial")]
         [Route("pagina-inicial/{id:int}/{categoria:guid?}")]
         public IActionResult Index(int id, Guid categoria)
@@ -25,10 +26,38 @@ namespace Web.Cadastro.Controllers
             return View();
         }
 
+        [Route("")]
+        public IActionResult Index()
+        {
+            var filme = new Filme
+            {
+                Titulo = "Oi",
+                DataLancamento = DateTime.Now,
+                Genero = null,
+                Avaliacao = "10",
+                Valor = 20000,
+
+            };
+           
+            return RedirectToAction("Privacy", filme);
+
+            //return View();
+        }
+
         [Route("privacidade")]
         [Route("politica-de-privacidade")]
-        public IActionResult Privacy()
+        public IActionResult Privacy(Filme filme)
         {
+            if (ModelState.IsValid)
+            { 
+                
+            }
+
+            foreach (var e in ModelState.Values.SelectMany(m => m.Errors))
+            {
+                Console.WriteLine(e.ErrorMessage);
+            }
+
             // JSON
             //return Json("{'nome':'Caio'}");
 
