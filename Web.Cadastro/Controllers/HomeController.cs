@@ -29,6 +29,14 @@ namespace Web.Cadastro.Controllers
         [Route("politica-de-privacidade")]
         public IActionResult Privacy()
         {
+            // JSON
+            //return Json("{'nome':'Caio'}");
+
+            // Arquivo
+            //var fileBytes = System.IO.File.ReadAllBytes(@"D:\Main\2021\Projetos\MVC-Core\Web.Cadastro\wwwroot\favicon.ico");
+            //var fileName = "icone.ico";
+            //return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+
             return View();
         }
 
