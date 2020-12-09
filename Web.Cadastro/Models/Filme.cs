@@ -10,7 +10,7 @@ namespace Web.Cadastro.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "O campo Título é obrigatório")]
-        [StringLength(60, MinimumLength = 30, ErrorMessage = "O titulo precisa ter entre 3 ou 60 caracteres")]
+        [StringLength(60, MinimumLength = 3, ErrorMessage = "O titulo precisa ter entre 3 ou 60 caracteres")]
         public string Titulo { get; set; }
 
         [DataType(DataType.DateTime, ErrorMessage = "O campo lançamento é do tipo data")]
