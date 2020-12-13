@@ -23,6 +23,7 @@ namespace Dev.Web
             }
 
             app.UseRouting();
+            app.UseStaticFiles();
 
             app.UseEndpoints(endPoints => {
                 endPoints.MapControllerRoute(
