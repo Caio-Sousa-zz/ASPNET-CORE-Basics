@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Dev.Web.Areas.Produtos.Controllers
+namespace Dev.Web.Modulos.Vendas.Controllers
 {
-    [Area("Produtos")]
-    public class CadastroController : Controller
+    [Area("Vendas")]
+    [Route("vendas")]
+    public class PedidosController : Controller
     {
         public IActionResult Index()
         {
