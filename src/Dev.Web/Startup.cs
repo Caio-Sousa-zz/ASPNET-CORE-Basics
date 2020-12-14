@@ -30,6 +30,8 @@ namespace Dev.Web
                     name: "modulos",
                     pattern: "{controller=Home}/{action=Index}/{id?}"
                 );
+
+                endPoints.MapAreaControllerRoute("default", "Produtos", "{controller=Cadastro}/{action=Index}/{id?}");
             });
         }
     }

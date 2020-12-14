@@ -1,3 +1,3 @@
 ﻿$(document).ready(function () {
-    alert("carregado!");
+    //alert("carregado!");
 })
