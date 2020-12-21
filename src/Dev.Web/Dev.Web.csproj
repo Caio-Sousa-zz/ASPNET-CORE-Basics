@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <StartupObject>Dev.Web.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

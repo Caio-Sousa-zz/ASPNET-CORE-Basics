@@ -39,7 +39,7 @@ namespace Dev.Web.Controllers
             _contexto.Alunos.Remove(aluno);
             _contexto.SaveChanges();
 
-            return View();
+            return View("_Layout");
         }
     }
 }
