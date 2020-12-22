@@ -31,6 +31,7 @@ namespace AspNetCoreIdentity
             // AddEntityFrameworkStores porque é entity framework
             // MoboDb addMoboDbStore etc.
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                 .AddDefaultUI()
                 .AddEntityFrameworkStores<AspNetCoreIdentityContext>();
 
