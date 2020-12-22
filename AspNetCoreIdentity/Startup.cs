@@ -24,9 +24,9 @@ namespace AspNetCoreIdentity
             services.AddControllersWithViews();
 
             services.AddDbContext<AspNetCoreIdentityContext>(options =>
-           
+
             options.UseSqlServer(Configuration.GetConnectionString("AspNetCoreIdentityContextConnection")));
-            
+
             // IdentityUser usuario da app
             // AddEntityFrameworkStores porque é entity framework
             // MoboDb addMoboDbStore etc.
@@ -36,10 +36,6 @@ namespace AspNetCoreIdentity
                 .AddEntityFrameworkStores<AspNetCoreIdentityContext>();
 
             services.AddRazorPages();
-
-
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -73,7 +69,7 @@ namespace AspNetCoreIdentity
 
                 endpoints.MapRazorPages();
 
-               
+
             });
         }
     }
