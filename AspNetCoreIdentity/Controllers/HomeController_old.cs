@@ -1,20 +1,18 @@
-﻿using AspNetCoreIdentity.Extensions;
-using AspNetCoreIdentity.Models;
+﻿using AspNetCoreIdentity.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
-using static AspNetCoreIdentity.Extensions.CustomAuthorization;
 
 namespace AspNetCoreIdentity.Controllers
 {
-   // [Authorize] // Autenticação
-    public class HomeController : Controller
+    [Authorize] // Autenticação
+    public class HomeController_old : Controller
     {
         private readonly ILogger<HomeController> _logger;
 
        
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController_old(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
@@ -42,8 +40,8 @@ namespace AspNetCoreIdentity.Controllers
             return View("Secret");
         }
 
-        [ClaimAuthorize("Produtos", "Ler")]
-        public IActionResult ClaimCustom()
+        [Authorize(Policy = "PodeEscrever")]
+        public IActionResult SecretClaimGravar()
         {
             return View("Secret");
         }
